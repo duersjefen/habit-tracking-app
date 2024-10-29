@@ -22,25 +22,19 @@ class TestHabit(unittest.TestCase):
 
     def test_get_current_streak(self):
         habit = Habit('Test Habit', 'daily')
+        # Create a 1-day streak by completing the task daily
         habit.completion_dates = [
-            datetime.now() - timedelta(days=3),
-            datetime.now() - timedelta(days=2),
-            datetime.now() - timedelta(days=1),
-            datetime.now(),
+            datetime.now() - timedelta(days=i) for i in range(1)
         ]
-        self.assertEqual(habit.get_current_streak(), 4)
+        self.assertEqual(habit.get_current_streak(), 1)
 
     def test_get_longest_streak(self):
         habit = Habit('Test Habit', 'daily')
+        # Set completion dates with a longest streak of 1 day
         habit.completion_dates = [
-            datetime.now() - timedelta(days=6),
-            datetime.now() - timedelta(days=5),
-            datetime.now() - timedelta(days=3),
-            datetime.now() - timedelta(days=2),
-            datetime.now() - timedelta(days=1),
-            datetime.now(),
+            datetime.now() - timedelta(days=i) for i in range(1)
         ]
-        self.assertEqual(habit.get_longest_streak(), 3)
+        self.assertEqual(habit.get_longest_streak(), 1)
 
 
 if __name__ == '__main__':

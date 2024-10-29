@@ -64,3 +64,7 @@ class HabitManager:
             print(f"Habit '{name}' marked as completed.")
         else:
             print(f"Habit '{name}' does not exist.")
+
+    def delete_all_habits(self):
+        """Deletes all habits."""
+        self.habits.clear()

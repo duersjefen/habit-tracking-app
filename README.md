@@ -73,8 +73,8 @@ The application comes with 5 predefined habits. To load them, ensure the databas
 
 ## Running Tests
 
-Navigate to the tests directory and run:
+Navigate to the project's root directory and run:
 
 ```bash
-python -m unittest discover
+python -m unittest discover tests
 ```
